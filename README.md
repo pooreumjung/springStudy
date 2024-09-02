@@ -2,7 +2,7 @@
 스프링부트 + Thymeleaf + JPA + Spring Security로 회원가입, CRUD게시판(댓글, 좋아요 기능 추가), 로그인 구현
 
 # 기본 로직
-✏️  필요한 기능
+##✏️  필요한 기능
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.회원가입<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.회원가입<br/>
