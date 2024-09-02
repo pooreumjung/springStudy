@@ -4,16 +4,16 @@
 # 기본 로직
 ✏️  필요한 기능
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.회원가입<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.회원가입<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.로그인<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.게시글 등록<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.게시글 조회<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.게시글 삭제<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.게시글 수정하기<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.댓글 달기<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.댓글 내역 보기<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.좋아요 기능<br/>
+  1.회원가입<br/>
+  2.회원가입<br/>
+  3.로그인<br/>
+  4.게시글 등록<br/>
+  5.게시글 조회<br/>
+  6.게시글 삭제<br/>
+  7.게시글 수정하기<br/>
+  8.댓글 달기<br/>
+  9.댓글 내역 보기<br/>
+  10.좋아요 기능<br/>
 
 ✏️  필요한 패키지
 
