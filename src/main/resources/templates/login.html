@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <title>로그인 창</title>
+</head>
+<body>
+<h1>로그인을 해주세용</h1>
+<img th:src="@{/image/html.png}">
+<form method="post" action="/member/login" class="login-box">
+    <table id="login-table">
+        <tr>
+            <td>아이디 <input type="text" name="id" required/></td>
+        </tr>
+        <tr>
+            <td>비밀번호 <input type="text" name="password" required   autocomplete="off"/></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="로그인">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

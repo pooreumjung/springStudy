@@ -1,0 +1,68 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <title>댓글 보기</title>
+</head>
+<body>
+<table class="table">
+    <thead class="thead-light">
+    <tr class="text-center">
+        <th scope="col">글번호</th>
+        <th scope="col">글제목</th>
+        <th scope="col">내용</th>
+        <th scope="col">작성자</th>
+        <th scope="col">좋아요</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="board : ${board}">
+        <td scope="row" width="10%">
+            <div th:text="${board.idx}" th:name="idx"></div>
+        </td>
+        <td scope="row" width="20%">
+            <div th:text="${board.title}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${board.content}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${board.member.id}"></div>
+        </td>
+        <td>
+            <div th:text="${board.likeCount}"></div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table class="table">
+    <thead class="thead-light">
+    <tr class="text-center">
+        <th scope="col">댓글번호</th>
+        <th scope="col">게시물번호</th>
+        <th scope="col">내용</th>
+        <th scope="col">작성자</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="comment : ${comments}">
+        <td scope="row" width="10%">
+            <div th:text="${comment.id}"></div>
+        </td>
+        <td scope="row" width="20%">
+            <div th:text="${comment.boardIdx.idx}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${comment.content}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${comment.memberId}"></div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

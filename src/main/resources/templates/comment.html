@@ -1,0 +1,52 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <title>댓글 달기</title>
+</head>
+<body>
+<h1><span th:text="${user}"></span>님 게시물 수정하기</h1>
+<table class="table">
+    <thead class="thead-light">
+    <tr class="text-center">
+        <th scope="col">글번호</th>
+        <th scope="col">글제목</th>
+        <th scope="col">내용</th>
+        <th scope="col">작성자</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="board : ${board}">
+            <td scope="row" width="10%">
+                <input th:type="text" th:value="${board.idx}" readonly>
+            </td>
+            <td scope="row" width="20%">
+                <input th:type="text" th:value="${board.title}" readonly>
+            </td>
+            <td scope="row" width="10%">
+                <input th:type="text" th:value="${board.content}" readonly>
+            </td>
+            <td scope="row" width="10%">
+                <input th:type="text" th:value="${board.member.id}" readonly>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<form method="post" th:action="${'/member/comment/' + board.idx + '/post'}" class="login-box">
+    <table id="login-table">
+        <tr>
+            <td><label>내용<textarea cols="50" rows="10" name="content"></textarea></label></td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="등록">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

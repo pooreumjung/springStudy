@@ -1,0 +1,74 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시판 리스트</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+<h1><span th:text="${id }"></span>님 환영합니다.</h1>
+<table class="table">
+    <thead class="thead-light">
+    <tr class="text-center">
+        <th scope="col">글번호</th>
+        <th scope="col">글제목</th>
+        <th scope="col">내용</th>
+        <th scope="col">작성자</th>
+        <th scope="col">좋아요</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="board : ${boardList}">
+        <td scope="row" width="10%">
+            <div th:text="${board.idx}" th:name="idx"></div>
+        </td>
+        <td scope="row" width="20%">
+            <div th:text="${board.title}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${board.content}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${board.member.id}"></div>
+        </td>
+        <td scope="row" width="10%">
+            <div th:text="${board.likeCount}"></div>
+        </td>
+        <td>
+            <a th:href="@{/member/comment/{idx}(idx=${board.idx})}">댓글달기</a>
+        </td>
+        <td>
+            <a th:href="${'/member/comment/' + board.idx + '/view'}">댓글보기</a>
+        </td>
+        <td>
+            <form th:method="post" th:action="${'/member/board/' + board.idx + '/like'}">
+                <input type="submit" name="like" value="좋아요 누르기">
+            </form>
+        </td>
+        <span th:if="${id==board.member.id}">
+            <td>
+                <form method="post" action="/member/delete">
+                    <input type="submit" name="delete" value="삭제하기">
+                    <input th:type="hidden" th:name="idx" th:value="${board.idx}">
+                </form>
+            </td>
+            <td>
+                <a th:href="${'/member/modify/' + board.idx}">수정하기</a>
+            </td>
+        </span>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <tr>
+        <form method="post" action="/member/logout">
+            <input type="submit" name="로그아웃" value="로그아웃">
+        </form>
+    </tr>
+    <tr>
+        <a href="/member/post">글쓰기</a>
+    </tr>
+</table>
+</body>
+</html>
+
+
