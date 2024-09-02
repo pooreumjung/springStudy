@@ -92,4 +92,5 @@
   
   https://pooreumjung.tistory.com/489 [푸으름:티스토리]
 
-  <img width="800" alt="db" src="https://github.com/user-attachments/assets/4d05706c-54e7-4e29-8401-d91e07eecd41">
+  <img width="722" alt="데이터베이스" src="https://github.com/user-attachments/assets/3a3602b8-52d9-4d20-9cc4-c542cdf125af">
+
