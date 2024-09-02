@@ -15,7 +15,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;댓글 내역 보기<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;좋아요 기능<br/>
 
-###✏️  필요한 패키지
+### ✏️  필요한 패키지
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;service <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repository<br/> 
@@ -92,4 +92,4 @@
   
   https://pooreumjung.tistory.com/489 [푸으름:티스토리]
 
-  <img src="file:///Users/pooreum/Desktop/image/db.png" width="가로 사이즈" height="세로 사이즈">
+  <img width="800" alt="db" src="https://github.com/user-attachments/assets/4d05706c-54e7-4e29-8401-d91e07eecd41">
