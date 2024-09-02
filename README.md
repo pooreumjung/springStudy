@@ -17,12 +17,12 @@
 
 ✏️  필요한 패키지
 
-  service 패키지
-  repository 패키지
-  controller 패키지
-  domain 패키지
-  dto 패키지
-  config 패키지
+  service 
+  repository 
+  controller 
+  domain 
+  dto 
+  config 
 
 ✏️  데이터베이스
 
