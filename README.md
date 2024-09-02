@@ -26,26 +26,26 @@
 
 ✏️  데이터베이스
 
-  Member(유저)
+  Member(유저)<br/>
     id ⇒ primary key, 유저의 id는 중복되면 안됨<br/>
     name ⇒ 문자열<br/>
     password ⇒ 문자열<br/>
     role ⇒ 권한 ADMIN OR USER<br/>
 
-  Board(게시판)
+  Board(게시판)<br/>
     idx ⇒ primary key, 게시글 번호도 중복되면 안됨<br/>
     title ⇒ 제목<br/>
     content ⇒ 내용<br/>
     memberId ⇒ 게시글 작성자<br/>
     likeCount ⇒ 게시글 좋아요 수<br/>
 
-  Comment(댓글)
+  Comment(댓글)<br/>
     idx ⇒ primary key, 별 의미 없음<br/>
     boardIdx ⇒ 댓글이 달릴 게시글 번호<br/>
     content ⇒ 댓글 내용<br/>
     memberId ⇒ 댓글 작성자<br/>
     
-  Likes(좋아요 관리)
+  Likes(좋아요 관리)<br/>
     idx ⇒ primary key, 별 의미 없음<br/>
     boardIdx ⇒ 좋아요를 누른 게시글 번호<br/>
     memberId ⇒ 좋아요를 누른 사람<br/>
