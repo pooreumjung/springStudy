@@ -58,12 +58,7 @@ public class BoardServiceImp implements BoardService {
 
     @Override
     public Optional<Board> getModifyBoard(Long idx) {
-        Optional<Board> board = boardRepository.findById(idx);
-        if (board.isPresent()) {
-            return board;
-        }
-        else
-            return Optional.empty();
+        return boardRepository.findById(idx);
     }
 
     @Override
@@ -93,9 +88,8 @@ public class BoardServiceImp implements BoardService {
     @Override
     public boolean checkBoardExist(Long idx) {
         Optional<Board> board = boardRepository.findById(idx);
-        if (board.isEmpty()) { // 존재하지 않음
-            return false;
-        } else // 존재함
-            return true;
+        // 존재하지 않음
+        // 존재함
+        return board.isPresent();
     }
 }

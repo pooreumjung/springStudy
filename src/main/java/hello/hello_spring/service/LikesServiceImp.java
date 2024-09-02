@@ -24,25 +24,29 @@ public class LikesServiceImp implements LikesService {
     @Override
     public void minusLike(Integer idx, String memberId) {
         Optional<Board> boardOptional = boardRepository.findById(idx.longValue());
-        Board board = boardOptional.get();
-        if(board.getLikeCount()>=1)
-        board.setLikeCount(board.getLikeCount() - 1);
-        boardRepository.save(board);
-        likesRepository.deleteByMemberIdAndBoardIdx(memberId,board);
+        if(boardOptional.isPresent()) {
+            Board board = boardOptional.get();
+            if (board.getLikeCount() >= 1)
+                board.setLikeCount(board.getLikeCount() - 1);
+            boardRepository.save(board);
+            likesRepository.deleteByMemberIdAndBoardIdx(memberId, board);
+        }
     }
 
     @Override
     public void addLike(Integer idx,String memberId) {
         Optional<Board> boardOptional = boardRepository.findById(idx.longValue());
-        Board board = boardOptional.get();
-        board.setLikeCount(board.getLikeCount() + 1);
-        boardRepository.save(board);
+        if(boardOptional.isPresent()) {
+            Board board = boardOptional.get();
+            board.setLikeCount(board.getLikeCount() + 1);
+            boardRepository.save(board);
 
-        Likes likes = Likes.builder()
-                .boardIdx(board)
-                .memberId(memberId)
-                .build();
-        likesRepository.save(likes);
+            Likes likes = Likes.builder()
+                    .boardIdx(board)
+                    .memberId(memberId)
+                    .build();
+            likesRepository.save(likes);
+        }
     }
 
     private final LikesRepository likesRepository;
@@ -52,30 +56,23 @@ public class LikesServiceImp implements LikesService {
     @Override
     public boolean checkBoardExist(Integer idx) {
         Optional<Board> boardOptional = boardRepository.findById(Long.valueOf(idx));
-        if (boardOptional.isEmpty())
-            return false;
-        else
-            return true;
+        return boardOptional.isPresent();
     }
 
     @Override
     public boolean checkMemberIdExist(String memberId) {
         Optional<Member> memberOptional = memberRepository.findById(memberId);
-        if (memberOptional.isEmpty())
-            return false;
-        else
-            return true;
+        return memberOptional.isPresent();
     }
 
     @Override
     public boolean checkLikeExist(Integer idx, String memberId) {
         Optional<Board> boardOptional = boardRepository.findById(Long.valueOf(idx));
-        Board board = boardOptional.get();
-        List<Likes> likesList = likesRepository.findByMemberIdAndBoardIdx(memberId, board);
-        if(likesList.isEmpty()){
-            return false;
+        if(boardOptional.isPresent()) {
+            Board board = boardOptional.get();
+            List<Likes> likesList = likesRepository.findByMemberIdAndBoardIdx(memberId, board);
+            return !likesList.isEmpty();
         }
-        else
-            return true;
+        return false;
     }
 }

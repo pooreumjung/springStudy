@@ -27,8 +27,10 @@ public class CommentServiceImp implements CommentService {
     @Override
     public void save(CommentPostDTO postDTO,String id, Integer idx) {
         Optional<Board>boardOptional = boardRepository.findById(idx.longValue());
-        Comment comment = Comment.builder()
-                        .boardIdx(boardOptional.get()).content(postDTO.getContent()).memberId(id).build();
-        commentRepository.save(comment);
+        if(boardOptional.isPresent()) {
+            Comment comment = Comment.builder()
+                    .boardIdx(boardOptional.get()).content(postDTO.getContent()).memberId(id).build();
+            commentRepository.save(comment);
+        }
     }
 }
